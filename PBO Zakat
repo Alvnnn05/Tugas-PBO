@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package tugaszakat;
+import java.util.Scanner;
+/**
+ *
+ * @author Alvnnn
+ */
+public class TugasZakat {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double nisab = 2 * 10000;
+        
+        // Perulangan menggunakan for untuk memberikan pilihan kepada pengguna
+        for (int i = 1; i <= 5; i++) {
+            // Meminta user memasukkan jumlah harta (uang) dalam bentuk desimal
+            System.out.print("Masukkan jumlah harta (dalam Rupiah): ");
+            double totalHarta = input.nextDouble();
+            
+            if (totalHarta >= + nisab){
+                double zakatMal = totalHarta * 2.5 / 100;
+               System.out.println("Jumlah zakat yang harus dibayar adalah : Rp " + zakatMal);
+            } else {
+                System.out.println("Gausah Bayar, duitnya ga cukup");
+            }
+            // Meminta user untuk memilih apakah ingin menghitung lagi
+            System.out.print("Apakah Anda ingin menghitung zakat lagi? (y/n): ");
+            char pilihan = input.next().charAt(0);
+
+            // Kondisi untuk mengecek apakah pengguna ingin keluar dari perulangan
+            if (pilihan == 'n' || pilihan == 'N') {
+                System.out.println("Selesai");
+                break; // Keluar dari perulangan jika pengguna memilih 'n'
+            }
+        }
+    }
+}
